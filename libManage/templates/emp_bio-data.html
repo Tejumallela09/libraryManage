@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+ <h1>Employee Page</h1>
+{% if emp %}
+ <h1>Show Data</h1>
+ <h3>{{emp}}</h3>
+ <table>
+     <tr>
+         <th>Emp_ID</th>
+         <th>Name</th>
+         <th>Email</th>
+         <th>Mobile</th>
+         <th>Department</th>
+         <th>Salary</th>
+     </tr>
+ <tr>
+     {% for em in emp %}
+     <td>{{em.emp_id}}</td>
+     <td>{{em.name}}</td>
+     <td>{{em.email}}</td>
+     <td>{{em.mobile}}</td>
+     <td>{{em.dept_name}}</td>
+     <td>{{em.salary}}</td>
+ </tr>
+     {% endfor %}
+</table>
+{% else %}
+ <h1>No Data</h1>
+{% endif %}
+</body>
+</html>
